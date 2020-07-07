@@ -17,10 +17,16 @@
 #define WIN32_LEAN_AND_MEAN // To reduce the size off the Win32 header files
 #include <windows.h>
 #include <stdio.h>
+#include <iostream>
+#include <string>
 
 int main(int argc, char* argv[]) {
 
     DWORD dwSleepTime = 5000;
+    if (argc == 2)
+    {
+        dwSleepTime = std::stoi(argv[1]);
+    }
     printf("%u[ms] sleep ... ", dwSleepTime);
     Sleep(dwSleepTime);
 
