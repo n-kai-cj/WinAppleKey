@@ -32,9 +32,11 @@ int main(int argc, char* argv[]) {
 
     while (true) {
 
-        BYTE VK = VK_NONAME;
+        BYTE VK = VK_NUMLOCK;
 
         printf("%d press\t", VK);
+        keybd_event(VK, 0, 0, 0);
+        keybd_event(VK, 0, KEYEVENTF_KEYUP, 0);
         keybd_event(VK, 0, 0, 0);
         keybd_event(VK, 0, KEYEVENTF_KEYUP, 0);
 
